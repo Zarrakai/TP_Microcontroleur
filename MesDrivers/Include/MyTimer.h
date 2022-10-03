@@ -20,6 +20,21 @@ c o n f p l u s f i n e s (PWM, codeur i n c . . . )
 
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) ;
 
+/*
+**************************************************************************************************
+* @brief
+* @param : - TIM_TypeDef * Timer : Timer concerne
+- char Prio : de 0 a 15
+* @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
+Page 2 of 4
+Activité 2 : Utilisation des Timer et gestion des Interruptions
+**************************************************************************************************
+*/
+//void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio);
+void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio , void (*IT_function ) ( void )) ;
+void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) ;
+
+
 #define MyTimer_Base_Start(Timer)( Timer->CR1 |= 0x1)
 #define MyTimer_Base_Stop(Timer)( Timer->CR1 &= ~0x1)
 

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Include;..\MesDrivers\Include</IncludePath>
+              <IncludePath>..\MesDrivers\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -448,6 +448,11 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+            <File>
+              <FileName>Driver_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Driver_GPIO.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -792,7 +797,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Include;.\Source;..\MesDrivers\Source</IncludePath>
+              <IncludePath>.\Include;.\Source;..\MesDrivers\Source;..\MesDrivers\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -850,6 +855,11 @@
               <FileName>MyTimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MesDrivers\Source\MyTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Driver_GPIO.c</FilePath>
             </File>
           </Files>
         </Group>

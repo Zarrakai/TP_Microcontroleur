@@ -22,23 +22,30 @@ Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
 U:\Documents\TP_Microcontroleur\TP_Microcontroleur\TimerDev\TimerDev.uvprojx
-Project File Date:  09/30/2022
+Project File Date:  10/03/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Simulé'
-assembling startup_stm32f10x_md.s...
-compiling MyTimer.c...
-compiling system_stm32f10x.c...
+Build target 'Simulé'
 compiling Principal.c...
-Source\Principal.c(10): warning:  #177-D: variable "periodeTimer_ms"  was declared but never referenced
+Source\Principal.c(14): warning:  #177-D: variable "compteur"  was declared but never referenced
+  	int compteur = 0;
+Source\Principal.c(15): warning:  #177-D: variable "periodeTimer_ms"  was declared but never referenced
   	double periodeTimer_ms;
-Source\Principal.c(11): warning:  #177-D: variable "periode_Horloge_ms"  was declared but never referenced
+Source\Principal.c(16): warning:  #177-D: variable "periode_Horloge_ms"  was declared but never referenced
   	double periode_Horloge_ms;
-Source\Principal.c: 2 warnings, 0 errors
+Source\Principal.c: 3 warnings, 0 errors
+compiling MyTimer.c...
+..\MesDrivers\Source\MyTimer.c(55): warning:  #188-D: enumerated type mixed with another type
+  	NVIC_EnableIRQ(interruptNumber);
+..\MesDrivers\Source\MyTimer.c(56): warning:  #188-D: enumerated type mixed with another type
+  	NVIC_SetPriority(interruptNumber, Prio);
+..\MesDrivers\Source\MyTimer.c(79): warning:  #1-D: last line of file ends without a newline
+  }
+..\MesDrivers\Source\MyTimer.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=540 RO-data=268 RW-data=8 ZI-data=1024  
-".\Objects\Microcontroleurs_activite1_simule.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=1120 RO-data=268 RW-data=20 ZI-data=1028  
+".\Objects\Microcontroleurs_activite1_simule.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -65,10 +72,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Source file:   Device\Source\system_stm32f10x.c
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
