@@ -5,8 +5,21 @@ void (*ptFonction ) ( void );
 
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer )
 	{
-		Timer ->Timer->ARR = Timer->ARR;
-	  Timer ->Timer->PSC = Timer->PSC; 		
+		if (Timer->Timer == TIM1){
+			RCC->APB1ENR |= RCC_APB2ENR_TIM1EN;
+		}
+		else if (Timer->Timer == TIM2){
+			RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+		}
+		else if (Timer->Timer == TIM3){
+			RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+		}
+		else if (Timer->Timer == TIM4){
+			RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
+		}
+		
+		Timer->Timer->ARR = Timer->ARR;
+	  Timer->Timer->PSC = Timer->PSC; 		
 }
 	
 /*
@@ -73,7 +86,19 @@ void TIM2_IRQHandler(void)
 	
 }
 
-void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) 
+/*void MyTimer_PWM( TIM_TypeDef * Timer , char Channel ) 
 {
-	
+	Timer->
+}*/
+
+void MyTimer_Mode_Compteur_Incremental(TIM_TypeDef * Timer){
+	//on met sms a 011
+	Timer->SMCR |= TIM_SMCR_SMS_0;
+	Timer->SMCR |= TIM_SMCR_SMS_1;
+}
+int My_Timer_Get_CRR(TIM_TypeDef * Timer){
+	return Timer->ARR;
+}
+void My_Timer_Set_ARR(TIM_TypeDef * Timer,int value){
+	Timer->ARR = value;
 }
